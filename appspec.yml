@@ -1,0 +1,13 @@
+version: 0.0
+os: centos
+files:
+  - source: /
+    destination: /var/www/html/deploy
+    overwrite: true
+hooks:
+  BeforeInstall:
+  AfterInstall:
+    - location: scripts/install_composer_dependencies.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
