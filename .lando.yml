@@ -1,0 +1,22 @@
+name: deploy
+recipe: lamp
+proxy:
+config:
+  webroot: .
+  via: apache
+  php: '7.2'
+  xdebug: true
+  # Some tooling.
+  # Events
+  events:
+  # After starting do a composer install
+    post-start:
+      - echo "Composer install"
+      - cd /app/ && composer install --ansi
+  tooling:
+    composer:
+      service: appserver
+      description: Run composer commands
+      cmd:
+        - composer
+        - --ansi
