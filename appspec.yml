@@ -8,4 +8,4 @@ hooks:
   AfterInstall:
     - location: scripts/install_composer_dependencies.sh
       timeout: 300
-      runas: centos
+      runas: root
