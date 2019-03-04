@@ -6,3 +6,4 @@ $date = Carbon::now();
 echo $date->toDayDateTimeString();
 echo "<br><h1>DENNNUS</h1>";
 echo "<br>EN SANDER";
+echo "HEUJ CARTEL";
